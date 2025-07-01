@@ -25,7 +25,7 @@ keywords:
     "SLAM": 
         filters: ["SLAM", "Visual Odometry"]
     "VLN":
-        filters: ["Natural Language Navigation"]
+        filters: ["visual Language Navigation"]
     "Visual Localization":
         filters: ["Visual Localization","Camera Localization",
                   "Camera Re-localisation","Loop Closure Detection",
