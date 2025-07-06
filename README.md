@@ -1,4 +1,4 @@
-## Updated on 2025.07.01
+## Updated on 2025.07.06
 > Usage instructions: [here](./docs/README.md#usage)
 
 <details>
@@ -19,6 +19,11 @@
 
 |Publish Date|Title|Authors|PDF|Code|
 |---|---|---|---|---|
+|**2025-07-01**|**RaGNNarok: A Light-Weight Graph Neural Network for Enhancing Radar Point Clouds on Unmanned Ground Vehicles**|David Hunt et.al.|[2507.00937](http://arxiv.org/abs/2507.00937)|null|
+|**2025-07-01**|**Generation of Indoor Open Street Maps for Robot Navigation from CAD Files**|Jiajie Zhang et.al.|[2507.00552](http://arxiv.org/abs/2507.00552)|null|
+|**2025-06-30**|**VOCAL: Visual Odometry via ContrAstive Learning**|Chi-Yao Huang et.al.|[2507.00243](http://arxiv.org/abs/2507.00243)|null|
+|**2025-06-29**|**TVG-SLAM: Robust Gaussian Splatting SLAM with Tri-view Geometric Constraints**|Zhen Tan et.al.|[2506.23207](http://arxiv.org/abs/2506.23207)|null|
+|**2025-06-29**|**Event-based Stereo Visual-Inertial Odometry with Voxel Map**|Zhaoxing Zhang et.al.|[2506.23078](http://arxiv.org/abs/2506.23078)|null|
 |**2025-06-26**|**Adaptive Multipath-Based SLAM for Distributed MIMO Systems**|Xuhong Li et.al.|[2506.21798](http://arxiv.org/abs/2506.21798)|null|
 |**2025-06-24**|**Ark: An Open-source Python-based Framework for Robot Learning**|Magnus Dierking et.al.|[2506.21628](http://arxiv.org/abs/2506.21628)|null|
 |**2025-06-26**|**EndoFlow-SLAM: Real-Time Endoscopic SLAM with Flow-Constrained Gaussian Splatting**|Taoyu Wu et.al.|[2506.21420](http://arxiv.org/abs/2506.21420)|null|
@@ -1005,7 +1010,7 @@
 |**2021-10-03**|**Quadrotor Control on $SU(2)\times R^3$ with SLAM Integration**|Marcus Greiff et.al.|[2110.01099](http://arxiv.org/abs/2110.01099)|null|
 |**2021-10-02**|**Online Incremental Non-Gaussian Inference for SLAM Using Normalizing Flows**|Qiangqiang Huang et.al.|[2110.00876](http://arxiv.org/abs/2110.00876)|**[link](https://github.com/marineroboticsgroup/nf-isam)**|
 
-<p align=right>(<a href=#updated-on-20250701>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20250706>back to top</a>)</p>
 
 ## SFM
 
@@ -1434,12 +1439,15 @@
 |**2021-08-29**|**Solving Viewing Graph Optimization for Simultaneous Position and Rotation Registration**|Seyed-Mahdi Nasiri et.al.|[2108.12876](http://arxiv.org/abs/2108.12876)|null|
 |**2021-08-23**|**Burst Imaging for Light-Constrained Structure-From-Motion**|Ahalya Ravendran et.al.|[2108.09895](http://arxiv.org/abs/2108.09895)|null|
 
-<p align=right>(<a href=#updated-on-20250701>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20250706>back to top</a>)</p>
 
 ## Visual Localization
 
 |Publish Date|Title|Authors|PDF|Code|
 |---|---|---|---|---|
+|**2025-07-01**|**LoD-Loc v2: Aerial Visual Localization over Low Level-of-Detail City Models using Explicit Silhouette Alignment**|Juelin Zhu et.al.|[2507.00659](http://arxiv.org/abs/2507.00659)|null|
+|**2025-06-28**|**Utilizing a Novel Deep Learning Method for Scene Categorization in Remote Sensing Data**|Ghufran A. Omran et.al.|[2506.22939](http://arxiv.org/abs/2506.22939)|null|
+|**2025-06-28**|**Mask-aware Text-to-Image Retrieval: Referring Expression Segmentation Meets Cross-modal Retrieval**|Li-Cheng Shen et.al.|[2506.22864](http://arxiv.org/abs/2506.22864)|null|
 |**2025-06-27**|**MatChA: Cross-Algorithm Matching with Feature Augmentation**|Paula Carbó Cubero et.al.|[2506.22336](http://arxiv.org/abs/2506.22336)|null|
 |**2025-06-26**|**OracleFusion: Assisting the Decipherment of Oracle Bone Script with Structurally Constrained Semantic Typography**|Caoshuo Li et.al.|[2506.21101](http://arxiv.org/abs/2506.21101)|null|
 |**2025-06-25**|**Visualizing intercalation effects in 2D materials using AFM based techniques**|Karmen Kapustić et.al.|[2506.20467](http://arxiv.org/abs/2506.20467)|null|
@@ -2628,7 +2636,7 @@
 |**2021-09-09**|**CrowdDriven: A New Challenging Dataset for Outdoor Visual Localization**|Ara Jafarzadeh et.al.|[2109.04527](http://arxiv.org/abs/2109.04527)|null|
 |**2021-09-09**|**Keeping an Eye on Things: Deep Learned Features for Long-Term Visual Localization**|Mona Gridseth et.al.|[2109.04041](http://arxiv.org/abs/2109.04041)|**[link](https://github.com/utiasasrl/deep_learned_visual_features)**|
 
-<p align=right>(<a href=#updated-on-20250701>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20250706>back to top</a>)</p>
 
 ## Keypoint Detection
 
@@ -2945,12 +2953,15 @@
 |**2021-08-31**|**A Novel Dataset for Keypoint Detection of quadruped Animals from Images**|Prianka Banik et.al.|[2108.13958](http://arxiv.org/abs/2108.13958)|**[link](https://github.com/prinik/awa-pose)**|
 |**2021-08-27**|**A Matching Algorithm based on Image Attribute Transfer and Local Features for Underwater Acoustic and Optical Images**|Xiaoteng Zhou et.al.|[2108.12151](http://arxiv.org/abs/2108.12151)|null|
 
-<p align=right>(<a href=#updated-on-20250701>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20250706>back to top</a>)</p>
 
 ## Image Matching
 
 |Publish Date|Title|Authors|PDF|Code|
 |---|---|---|---|---|
+|**2025-07-02**|**What does really matter in image goal navigation?**|Gianluca Monaci et.al.|[2507.01667](http://arxiv.org/abs/2507.01667)|null|
+|**2025-06-30**|**Efficient and Accurate Image Provenance Analysis: A Scalable Pipeline for Large-scale Images**|Jiewei Lai et.al.|[2506.23707](http://arxiv.org/abs/2506.23707)|null|
+|**2025-06-29**|**Dynamic Contrastive Learning for Hierarchical Retrieval: A Case Study of Distance-Aware Cross-View Geo-Localization**|Suofei Zhang et.al.|[2506.23077](http://arxiv.org/abs/2506.23077)|null|
 |**2025-06-27**|**MatChA: Cross-Algorithm Matching with Feature Augmentation**|Paula Carbó Cubero et.al.|[2506.22336](http://arxiv.org/abs/2506.22336)|null|
 |**2025-06-27**|**Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs**|Shaojie Zhang et.al.|[2506.22139](http://arxiv.org/abs/2506.22139)|null|
 |**2025-06-27**|**ZeroReg3D: A Zero-shot Registration Pipeline for 3D Consecutive Histopathology Image Reconstruction**|Juming Xiong et.al.|[2506.21923](http://arxiv.org/abs/2506.21923)|null|
@@ -3291,7 +3302,7 @@
 |**2021-08-27**|**Matching Underwater Sonar Images by the Learned Descriptor Based on Style Transfer Method**|Xiaoteng Zhou et.al.|[2108.12072](http://arxiv.org/abs/2108.12072)|null|
 |**2021-08-26**|**Efficient Joint Object Matching via Linear Programming**|Antonio De Rosa et.al.|[2108.11911](http://arxiv.org/abs/2108.11911)|null|
 
-<p align=right>(<a href=#updated-on-20250701>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20250706>back to top</a>)</p>
 
 ## NeRF
 
@@ -4919,7 +4930,7 @@
 |**2022-07-29**|**Neural Density-Distance Fields**|Itsuki Ueda et.al.|[2207.14455](http://arxiv.org/abs/2207.14455)|**[link](https://github.com/ueda0319/neddf)**|
 |**2022-07-27**|**Is Attention All NeRF Needs?**|Mukund Varma T et.al.|[2207.13298](http://arxiv.org/abs/2207.13298)|null|
 
-<p align=right>(<a href=#updated-on-20250701>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20250706>back to top</a>)</p>
 
 ## VLN
 
@@ -4946,12 +4957,22 @@
 |**2022-03-25**|**Analyzing Generalization of Vision and Language Navigation to Unseen Outdoor Areas**|Raphael Schumann et.al.|[2203.13838](http://arxiv.org/abs/2203.13838)|**[link](https://github.com/raphael-sch/map2seq_vln)**|
 |**2022-03-08**|**Visual-Language Navigation Pretraining via Prompt-based Environmental Self-exploration**|Xiwen Liang et.al.|[2203.04006](http://arxiv.org/abs/2203.04006)|**[link](https://github.com/liangcici/probes-vln)**|
 
-<p align=right>(<a href=#updated-on-20250701>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20250706>back to top</a>)</p>
 
 ## 3DGS
 
 |Publish Date|Title|Authors|PDF|Code|
 |---|---|---|---|---|
+|**2025-07-03**|**HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars**|Gent Serifi et.al.|[2507.02803](http://arxiv.org/abs/2507.02803)|null|
+|**2025-07-03**|**ArtGS:3D Gaussian Splatting for Interactive Visual-Physical Modeling and Manipulation of Articulated Objects**|Qiaojun Yu et.al.|[2507.02600](http://arxiv.org/abs/2507.02600)|null|
+|**2025-07-03**|**LocalDyGS: Multi-view Global Dynamic Scene Modeling via Adaptive Local Implicit Feature Decoupling**|Jiahao Wu et.al.|[2507.02363](http://arxiv.org/abs/2507.02363)|null|
+|**2025-07-03**|**Gbake: Baking 3D Gaussian Splats into Reflection Probes**|Stephen Pasch et.al.|[2507.02257](http://arxiv.org/abs/2507.02257)|null|
+|**2025-07-02**|**3D Gaussian Splatting Driven Multi-View Robust Physical Adversarial Camouflage Generation**|Tianrui Lou et.al.|[2507.01367](http://arxiv.org/abs/2507.01367)|null|
+|**2025-07-01**|**VISTA: Open-Vocabulary, Task-Relevant Robot Exploration with Online Semantic Gaussian Splatting**|Keiko Nagami et.al.|[2507.01125](http://arxiv.org/abs/2507.01125)|null|
+|**2025-07-01**|**Masks make discriminative models great again!**|Tianshi Cao et.al.|[2507.00916](http://arxiv.org/abs/2507.00916)|null|
+|**2025-07-01**|**GaussianVLM: Scene-centric 3D Vision-Language Models using Language-aligned Gaussian Splats for Embodied Reasoning and Beyond**|Anna-Maria Halacheva et.al.|[2507.00886](http://arxiv.org/abs/2507.00886)|null|
+|**2025-07-01**|**LOD-GS: Level-of-Detail-Sensitive 3D Gaussian Splatting for Detail Conserved Anti-Aliasing**|Zhenya Yang et.al.|[2507.00554](http://arxiv.org/abs/2507.00554)|null|
+|**2025-07-01**|**GDGS: 3D Gaussian Splatting Via Geometry-Guided Initialization And Dynamic Density Control**|Xingjun Wang et.al.|[2507.00363](http://arxiv.org/abs/2507.00363)|null|
 |**2025-06-25**|**SAR-GS: 3D Gaussian Splatting for Synthetic Aperture Radar Target Reconstruction**|Aobo Li et.al.|[2506.21633](http://arxiv.org/abs/2506.21633)|null|
 |**2025-06-24**|**ICP-3DGS: SfM-free 3D Gaussian Splatting for Large-scale Unbounded Scenes**|Chenhao Zhang et.al.|[2506.21629](http://arxiv.org/abs/2506.21629)|null|
 |**2025-06-26**|**MADrive: Memory-Augmented Driving Scene Modeling**|Polina Karpikova et.al.|[2506.21520](http://arxiv.org/abs/2506.21520)|null|
@@ -4986,7 +5007,7 @@
 |**2025-06-10**|**SceneSplat++: A Large Dataset and Comprehensive Benchmark for Language Gaussian Splatting**|Mengjiao Ma et.al.|[2506.08710](http://arxiv.org/abs/2506.08710)|null|
 |**2025-06-10**|**Complex-Valued Holographic Radiance Fields**|Yicheng Zhan et.al.|[2506.08350](http://arxiv.org/abs/2506.08350)|null|
 
-<p align=right>(<a href=#updated-on-20250701>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20250706>back to top</a>)</p>
 
 [contributors-shield]: https://img.shields.io/github/contributors/Vincentqyw/cv-arxiv-daily.svg?style=for-the-badge
 [contributors-url]: https://github.com/Vincentqyw/cv-arxiv-daily/graphs/contributors

@@ -2,13 +2,18 @@
 layout: default
 ---
 
-## Updated on 2025.07.01
+## Updated on 2025.07.06
 > Usage instructions: [here](./docs/README.md#usage)
 
 ## SLAM
 
 | Publish Date | Title | Authors | PDF | Code |
 |:---------|:-----------------------|:---------|:------|:------|
+|**2025-07-01**|**RaGNNarok: A Light-Weight Graph Neural Network for Enhancing Radar Point Clouds on Unmanned Ground Vehicles**|David Hunt et.al.|[2507.00937](http://arxiv.org/abs/2507.00937)|null|
+|**2025-07-01**|**Generation of Indoor Open Street Maps for Robot Navigation from CAD Files**|Jiajie Zhang et.al.|[2507.00552](http://arxiv.org/abs/2507.00552)|null|
+|**2025-06-30**|**VOCAL: Visual Odometry via ContrAstive Learning**|Chi-Yao Huang et.al.|[2507.00243](http://arxiv.org/abs/2507.00243)|null|
+|**2025-06-29**|**TVG-SLAM: Robust Gaussian Splatting SLAM with Tri-view Geometric Constraints**|Zhen Tan et.al.|[2506.23207](http://arxiv.org/abs/2506.23207)|null|
+|**2025-06-29**|**Event-based Stereo Visual-Inertial Odometry with Voxel Map**|Zhaoxing Zhang et.al.|[2506.23078](http://arxiv.org/abs/2506.23078)|null|
 |**2025-06-26**|**Adaptive Multipath-Based SLAM for Distributed MIMO Systems**|Xuhong Li et.al.|[2506.21798](http://arxiv.org/abs/2506.21798)|null|
 |**2025-06-24**|**Ark: An Open-source Python-based Framework for Robot Learning**|Magnus Dierking et.al.|[2506.21628](http://arxiv.org/abs/2506.21628)|null|
 |**2025-06-26**|**EndoFlow-SLAM: Real-Time Endoscopic SLAM with Flow-Constrained Gaussian Splatting**|Taoyu Wu et.al.|[2506.21420](http://arxiv.org/abs/2506.21420)|null|
@@ -1426,6 +1431,9 @@ layout: default
 
 | Publish Date | Title | Authors | PDF | Code |
 |:---------|:-----------------------|:---------|:------|:------|
+|**2025-07-01**|**LoD-Loc v2: Aerial Visual Localization over Low Level-of-Detail City Models using Explicit Silhouette Alignment**|Juelin Zhu et.al.|[2507.00659](http://arxiv.org/abs/2507.00659)|null|
+|**2025-06-28**|**Utilizing a Novel Deep Learning Method for Scene Categorization in Remote Sensing Data**|Ghufran A. Omran et.al.|[2506.22939](http://arxiv.org/abs/2506.22939)|null|
+|**2025-06-28**|**Mask-aware Text-to-Image Retrieval: Referring Expression Segmentation Meets Cross-modal Retrieval**|Li-Cheng Shen et.al.|[2506.22864](http://arxiv.org/abs/2506.22864)|null|
 |**2025-06-27**|**MatChA: Cross-Algorithm Matching with Feature Augmentation**|Paula Carbó Cubero et.al.|[2506.22336](http://arxiv.org/abs/2506.22336)|null|
 |**2025-06-26**|**OracleFusion: Assisting the Decipherment of Oracle Bone Script with Structurally Constrained Semantic Typography**|Caoshuo Li et.al.|[2506.21101](http://arxiv.org/abs/2506.21101)|null|
 |**2025-06-25**|**Visualizing intercalation effects in 2D materials using AFM based techniques**|Karmen Kapustić et.al.|[2506.20467](http://arxiv.org/abs/2506.20467)|null|
@@ -2933,6 +2941,9 @@ layout: default
 
 | Publish Date | Title | Authors | PDF | Code |
 |:---------|:-----------------------|:---------|:------|:------|
+|**2025-07-02**|**What does really matter in image goal navigation?**|Gianluca Monaci et.al.|[2507.01667](http://arxiv.org/abs/2507.01667)|null|
+|**2025-06-30**|**Efficient and Accurate Image Provenance Analysis: A Scalable Pipeline for Large-scale Images**|Jiewei Lai et.al.|[2506.23707](http://arxiv.org/abs/2506.23707)|null|
+|**2025-06-29**|**Dynamic Contrastive Learning for Hierarchical Retrieval: A Case Study of Distance-Aware Cross-View Geo-Localization**|Suofei Zhang et.al.|[2506.23077](http://arxiv.org/abs/2506.23077)|null|
 |**2025-06-27**|**MatChA: Cross-Algorithm Matching with Feature Augmentation**|Paula Carbó Cubero et.al.|[2506.22336](http://arxiv.org/abs/2506.22336)|null|
 |**2025-06-27**|**Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs**|Shaojie Zhang et.al.|[2506.22139](http://arxiv.org/abs/2506.22139)|null|
 |**2025-06-27**|**ZeroReg3D: A Zero-shot Registration Pipeline for 3D Consecutive Histopathology Image Reconstruction**|Juming Xiong et.al.|[2506.21923](http://arxiv.org/abs/2506.21923)|null|
@@ -4928,6 +4939,16 @@ layout: default
 
 | Publish Date | Title | Authors | PDF | Code |
 |:---------|:-----------------------|:---------|:------|:------|
+|**2025-07-03**|**HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars**|Gent Serifi et.al.|[2507.02803](http://arxiv.org/abs/2507.02803)|null|
+|**2025-07-03**|**ArtGS:3D Gaussian Splatting for Interactive Visual-Physical Modeling and Manipulation of Articulated Objects**|Qiaojun Yu et.al.|[2507.02600](http://arxiv.org/abs/2507.02600)|null|
+|**2025-07-03**|**LocalDyGS: Multi-view Global Dynamic Scene Modeling via Adaptive Local Implicit Feature Decoupling**|Jiahao Wu et.al.|[2507.02363](http://arxiv.org/abs/2507.02363)|null|
+|**2025-07-03**|**Gbake: Baking 3D Gaussian Splats into Reflection Probes**|Stephen Pasch et.al.|[2507.02257](http://arxiv.org/abs/2507.02257)|null|
+|**2025-07-02**|**3D Gaussian Splatting Driven Multi-View Robust Physical Adversarial Camouflage Generation**|Tianrui Lou et.al.|[2507.01367](http://arxiv.org/abs/2507.01367)|null|
+|**2025-07-01**|**VISTA: Open-Vocabulary, Task-Relevant Robot Exploration with Online Semantic Gaussian Splatting**|Keiko Nagami et.al.|[2507.01125](http://arxiv.org/abs/2507.01125)|null|
+|**2025-07-01**|**Masks make discriminative models great again!**|Tianshi Cao et.al.|[2507.00916](http://arxiv.org/abs/2507.00916)|null|
+|**2025-07-01**|**GaussianVLM: Scene-centric 3D Vision-Language Models using Language-aligned Gaussian Splats for Embodied Reasoning and Beyond**|Anna-Maria Halacheva et.al.|[2507.00886](http://arxiv.org/abs/2507.00886)|null|
+|**2025-07-01**|**LOD-GS: Level-of-Detail-Sensitive 3D Gaussian Splatting for Detail Conserved Anti-Aliasing**|Zhenya Yang et.al.|[2507.00554](http://arxiv.org/abs/2507.00554)|null|
+|**2025-07-01**|**GDGS: 3D Gaussian Splatting Via Geometry-Guided Initialization And Dynamic Density Control**|Xingjun Wang et.al.|[2507.00363](http://arxiv.org/abs/2507.00363)|null|
 |**2025-06-25**|**SAR-GS: 3D Gaussian Splatting for Synthetic Aperture Radar Target Reconstruction**|Aobo Li et.al.|[2506.21633](http://arxiv.org/abs/2506.21633)|null|
 |**2025-06-24**|**ICP-3DGS: SfM-free 3D Gaussian Splatting for Large-scale Unbounded Scenes**|Chenhao Zhang et.al.|[2506.21629](http://arxiv.org/abs/2506.21629)|null|
 |**2025-06-26**|**MADrive: Memory-Augmented Driving Scene Modeling**|Polina Karpikova et.al.|[2506.21520](http://arxiv.org/abs/2506.21520)|null|
