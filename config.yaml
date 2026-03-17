@@ -6,23 +6,23 @@ show_authors: True
 show_links: True
 show_badge: True
 max_results: 10
-
 publish_readme: True
 publish_gitpage: True
 publish_wechat: False
-
 # file paths
 json_readme_path: './docs/cv-arxiv-daily.json'
 json_gitpage_path: './docs/cv-arxiv-daily-web.json'
 json_wechat_path: './docs/cv-arxiv-daily-wechat.json'
-
 md_readme_path: 'README.md'
 md_gitpage_path: './docs/index.md'
 md_wechat_path: './docs/wechat.md'
-
 # keywords to search
 keywords:
-    "SLAM": 
+    "SLAM":
         filters: ["SLAM", "Visual Odometry"]
     "NeRF":
         filters: ["NeRF"]
+    "Vision Language Navigation":
+        filters: ["Vision Language Navigation", "VLN", "vision-and-language navigation"]
+    "Navigation":
+        filters: ["robot navigation", "autonomous navigation", "mapless navigation"]
