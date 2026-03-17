@@ -23,6 +23,6 @@ keywords:
     "NeRF":
         filters: ["NeRF"]
     "Vision Language Navigation":
-        filters: ["Vision Language Navigation", "VLN", "vision-and-language navigation"]
+        filters: ["Vision-and-Language Navigation", "Vision Language Navigation", "embodied navigation", "vision language navigation"]
     "Navigation":
         filters: ["robot navigation", "autonomous navigation", "mapless navigation"]
