@@ -19,7 +19,7 @@ md_wechat_path: './docs/wechat.md'
 # keywords to search
 keywords:
     "SLAM":
-        filters: ["SLAM", "Visual Odometry"]
+        filters: ["SLAM", "Visual Odometry", "3D Gaussian Splatting"]
     "NeRF":
         filters: ["NeRF"]
     "Vision Language Navigation":
