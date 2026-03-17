@@ -82,6 +82,24 @@ def get_code_link(qword:str) -> str:
         code_link = results["items"][0]["html_url"]
     return code_link
 
+def build_arxiv_query(raw_query: str) -> str:
+    """
+    Wrap each OR-separated quoted phrase so it searches both title and abstract.
+    e.g. '"Vision Language Navigation" OR "embodied navigation"'
+      -> '(ti:"Vision Language Navigation" OR abs:"Vision Language Navigation")
+          OR (ti:"embodied navigation" OR abs:"embodied navigation")'
+    Bare single words (SLAM, NeRF) are left as-is for broad free-text matching.
+    """
+    parts = [p.strip() for p in raw_query.split(' OR ')]
+    wrapped = []
+    for part in parts:
+        if part.startswith('"') and part.endswith('"'):
+            wrapped.append(f'(ti:{part} OR abs:{part})')
+        else:
+            wrapped.append(part)
+    return ' OR '.join(wrapped)
+
+
 def get_daily_papers(topic, query="slam", max_results=2):
     """
     @param topic: str
@@ -90,8 +108,12 @@ def get_daily_papers(topic, query="slam", max_results=2):
     """
     content = dict()
     content_to_web = dict()
+
+    arxiv_query = build_arxiv_query(query)
+    logging.info(f"arxiv query for [{topic}]: {arxiv_query}")
+
     search_engine = arxiv.Search(
-        query = query,
+        query = arxiv_query,
         max_results = max_results,
         sort_by = arxiv.SortCriterion.SubmittedDate
     )
