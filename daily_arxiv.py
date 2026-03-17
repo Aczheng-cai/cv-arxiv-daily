@@ -53,6 +53,7 @@ def get_authors(authors, first_author = False):
     else:
         output = authors[0]
     return output
+
 def sort_papers(papers):
     output = dict()
     keys = list(papers.keys())
@@ -60,7 +61,6 @@ def sort_papers(papers):
     for key in keys:
         output[key] = papers[key]
     return output
-import requests
 
 def get_code_link(qword:str) -> str:
     """
@@ -69,7 +69,6 @@ def get_code_link(qword:str) -> str:
     @param qword: query string, eg. arxiv ids and paper titles
     @return paper_code in github: string, if not found, return None
     """
-    # query = f"arxiv:{arxiv_id}"
     query = f"{qword}"
     params = {
         "q": query,
@@ -83,13 +82,12 @@ def get_code_link(qword:str) -> str:
         code_link = results["items"][0]["html_url"]
     return code_link
 
-def get_daily_papers(topic,query="slam", max_results=2):
+def get_daily_papers(topic, query="slam", max_results=2):
     """
     @param topic: str
     @param query: str
     @return paper_with_code: dict
     """
-    # output
     content = dict()
     content_to_web = dict()
     search_engine = arxiv.Search(
@@ -105,7 +103,7 @@ def get_daily_papers(topic,query="slam", max_results=2):
         paper_url           = result.entry_id
         paper_abstract      = result.summary.replace("\n"," ")
         paper_authors       = get_authors(result.authors)
-        paper_first_author  = get_authors(result.authors,first_author = True)
+        paper_first_author  = get_authors(result.authors, first_author=True)
         primary_category    = result.primary_category
         publish_time        = result.published.date()
         update_time         = result.updated.date()
@@ -113,7 +111,6 @@ def get_daily_papers(topic,query="slam", max_results=2):
 
         logging.info(f"Time = {update_time} title = {paper_title} author = {paper_first_author}")
 
-        # eg: 2108.09112v1 -> 2108.09112
         ver_pos = paper_id.find('v')
         if ver_pos == -1:
             paper_key = paper_id
@@ -121,23 +118,20 @@ def get_daily_papers(topic,query="slam", max_results=2):
             paper_key = paper_id[0:ver_pos]
         paper_url = arxiv_url + 'abs/' + paper_key
 
-        # Since PapersWithCode API is deprecated, we no longer fetch code links
-        # Papers will be listed without code links
         content[paper_key] = "|**{}**|**{}**|{} et.al.|[{}]({})|null|\n".format(
-               update_time,paper_title,paper_first_author,paper_key,paper_url)
+               update_time, paper_title, paper_first_author, paper_key, paper_url)
         content_to_web[paper_key] = "- {}, **{}**, {} et.al., Paper: [{}]({})".format(
-               update_time,paper_title,paper_first_author,paper_url,paper_url)
+               update_time, paper_title, paper_first_author, paper_url, paper_url)
 
-        # TODO: select useful comments
         comments = None
         if comments != None:
             content_to_web[paper_key] += f", {comments}\n"
         else:
             content_to_web[paper_key] += f"\n"
 
-    data = {topic:content}
-    data_web = {topic:content_to_web}
-    return data,data_web
+    data = {topic: content}
+    data_web = {topic: content_to_web}
+    return data, data_web
 
 def update_paper_links(filename):
     '''
@@ -151,7 +145,7 @@ def update_paper_links(filename):
         arxiv_id = parts[4].strip()
         code = parts[5].strip()
         arxiv_id = re.sub(r'v\d+', '', arxiv_id)
-        return date,title,authors,arxiv_id,code
+        return date, title, authors, arxiv_id, code
 
     with open(filename,"r") as f:
         content = f.read()
@@ -162,25 +156,21 @@ def update_paper_links(filename):
 
         json_data = m.copy()
 
-        for keywords,v in json_data.items():
+        for keywords, v in json_data.items():
             logging.info(f'keywords = {keywords}')
-            for paper_id,contents in v.items():
+            for paper_id, contents in v.items():
                 contents = str(contents)
-
                 update_time, paper_title, paper_first_author, paper_url, code_url = parse_arxiv_string(contents)
-
-                contents = "|{}|{}|{}|{}|{}|\n".format(update_time,paper_title,paper_first_author,paper_url,code_url)
+                contents = "|{}|{}|{}|{}|{}|\n".format(
+                    update_time, paper_title, paper_first_author, paper_url, code_url)
                 json_data[keywords][paper_id] = str(contents)
                 logging.info(f'paper_id = {paper_id}, contents = {contents}')
-
-                # PapersWithCode API is deprecated, skip code link updates
-                # Papers will keep their existing null code links
                 logging.info(f'Skipping code link update for paper_id = {paper_id} (PapersWithCode API deprecated)')
-        # dump to json file
-        with open(filename,"w") as f:
-            json.dump(json_data,f)
 
-def update_json_file(filename,data_dict):
+        with open(filename,"w") as f:
+            json.dump(json_data, f)
+
+def update_json_file(filename, data_dict):
     '''
     daily update json file using data_dict
     '''
@@ -193,37 +183,60 @@ def update_json_file(filename,data_dict):
 
     json_data = m.copy()
 
-    # update papers in each keywords
     for data in data_dict:
         for keyword in data.keys():
             papers = data[keyword]
-
             if keyword in json_data.keys():
                 json_data[keyword].update(papers)
             else:
                 json_data[keyword] = papers
 
     with open(filename,"w") as f:
-        json.dump(json_data,f)
+        json.dump(json_data, f)
 
-def json_to_md(filename,md_filename,
-               task = '',
-               to_web = False,
-               use_title = True,
-               use_tc = True,
-               show_badge = True,
-               use_b2t = True):
+def extract_date_from_content(v: str):
     """
-    @param filename: str
-    @param md_filename: str
-    @return None
+    Extract the date string (YYYY-MM-DD) from a paper content row.
+    Handles both bold (**date**) and plain date formats.
+    Returns a datetime.date or None.
+    """
+    # Match bold date: |**2024-01-15**|...
+    match = re.search(r'\*\*(\d{4}-\d{2}-\d{2})\*\*', v)
+    if match:
+        try:
+            return datetime.date.fromisoformat(match.group(1))
+        except ValueError:
+            pass
+    # Match plain date: |2024-01-15|...
+    match = re.search(r'\|(\d{4}-\d{2}-\d{2})\|', v)
+    if match:
+        try:
+            return datetime.date.fromisoformat(match.group(1))
+        except ValueError:
+            pass
+    return None
+
+def json_to_md(filename, md_filename,
+               task='',
+               to_web=False,
+               use_title=True,
+               use_tc=True,
+               show_badge=True,
+               use_b2t=True,
+               group_by_month=False):
+    """
+    Convert JSON paper data to Markdown.
+
+    @param filename: str - path to JSON data file
+    @param md_filename: str - path to output Markdown file
+    @param group_by_month: bool - if True, collapse papers into monthly <details> blocks
     """
     def pretty_math(s:str) -> str:
         ret = ''
         match = re.search(r"\$.*\$", s)
         if match == None:
             return s
-        math_start,math_end = match.span()
+        math_start, math_end = match.span()
         space_trail = space_leading = ''
         if s[:math_start][-1] != ' ' and '*' != s[:math_start][-1]: space_trail = ' '
         if s[math_end:][0] != ' ' and '*' != s[math_end:][0]: space_leading = ' '
@@ -243,33 +256,22 @@ def json_to_md(filename,md_filename,
         else:
             data = json.loads(content)
 
-    # clean README.md if daily already exist else create it
     with open(md_filename,"w+") as f:
         pass
 
-    # write data into README.md
     with open(md_filename,"a+") as f:
 
         if (use_title == True) and (to_web == True):
             f.write("---\n" + "layout: default\n" + "---\n\n")
 
-        # if show_badge == True:
-        #     f.write(f"[![Contributors][contributors-shield]][contributors-url]\n")
-        #     f.write(f"[![Forks][forks-shield]][forks-url]\n")
-        #     f.write(f"[![Stargazers][stars-shield]][stars-url]\n")
-        #     f.write(f"[![Issues][issues-shield]][issues-url]\n\n")
-
         if use_title == True:
-            #f.write(("<p align="center"><h1 align="center"><br><ins>CV-ARXIV-DAILY"
-            #         "</ins><br>Automatically Update CV Papers Daily</h1></p>\n"))
             f.write("## Updated on " + DateNow + "\n")
         else:
             f.write("> Updated on " + DateNow + "\n")
 
-        # TODO: add usage
         f.write("> Usage instructions: [here](./docs/README.md#usage)\n\n")
 
-        #Add: table of contents
+        # Table of contents
         if use_tc == True:
             f.write("<details>\n")
             f.write("  <summary>Table of Contents</summary>\n")
@@ -287,33 +289,75 @@ def json_to_md(filename,md_filename,
             day_content = data[keyword]
             if not day_content:
                 continue
-            # the head of each part
+
             f.write(f"## {keyword}\n\n")
 
-            if use_title == True :
-                if to_web == False:
-                    f.write("|Publish Date|Title|Authors|PDF|Code|\n" + "|---|---|---|---|---|\n")
-                else:
-                    f.write("| Publish Date | Title | Authors | PDF | Code |\n")
-                    f.write("|:---------|:-----------------------|:---------|:------|:------|\n")
-
-            # sort papers by date
+            # Sort all papers by date descending
             day_content = sort_papers(day_content)
 
-            for _,v in day_content.items():
-                if v is not None:
-                    f.write(pretty_math(v)) # make latex pretty
+            if group_by_month:
+                # --- Group papers into monthly collapsible sections ---
+                # Build a dict: { "YYYY-MM" -> [(paper_id, content_str), ...] }
+                monthly = {}
+                for paper_id, v in day_content.items():
+                    if v is None:
+                        continue
+                    date_obj = extract_date_from_content(str(v))
+                    if date_obj:
+                        month_key = date_obj.strftime("%Y-%m")
+                    else:
+                        month_key = "Unknown"
+                    monthly.setdefault(month_key, []).append((paper_id, v))
+
+                # Sort months descending (newest first)
+                sorted_months = sorted(monthly.keys(), reverse=True)
+
+                for month_key in sorted_months:
+                    if month_key == "Unknown":
+                        month_label = "Unknown Date"
+                    else:
+                        try:
+                            month_label = datetime.date.fromisoformat(month_key + "-01").strftime("%B %Y")
+                        except ValueError:
+                            month_label = month_key
+
+                    # Collapsible block per month
+                    f.write(f"<details>\n")
+                    f.write(f"  <summary><strong>{month_label}</strong> — {len(monthly[month_key])} papers</summary>\n\n")
+
+                    if to_web == False:
+                        f.write("|Publish Date|Title|Authors|PDF|Code|\n" + "|---|---|---|---|---|\n")
+                    else:
+                        f.write("| Publish Date | Title | Authors | PDF | Code |\n")
+                        f.write("|:---------|:-----------------------|:---------|:------|:------|\n")
+
+                    for _, v in monthly[month_key]:
+                        if v is not None:
+                            f.write(pretty_math(str(v)))
+
+                    f.write("\n</details>\n\n")
+
+            else:
+                # --- Original flat table (no monthly grouping) ---
+                if use_title == True:
+                    if to_web == False:
+                        f.write("|Publish Date|Title|Authors|PDF|Code|\n" + "|---|---|---|---|---|\n")
+                    else:
+                        f.write("| Publish Date | Title | Authors | PDF | Code |\n")
+                        f.write("|:---------|:-----------------------|:---------|:------|:------|\n")
+
+                for _, v in day_content.items():
+                    if v is not None:
+                        f.write(pretty_math(v))
 
             f.write(f"\n")
 
-            #Add: back to top
             if use_b2t:
                 top_info = f"#Updated on {DateNow}"
                 top_info = top_info.replace(' ','-').replace('.','')
                 f.write(f"<p align=right>(<a href={top_info.lower()}>back to top</a>)</p>\n\n")
 
         if show_badge == True:
-            # we don't like long string, break it!
             f.write((f"[contributors-shield]: https://img.shields.io/github/"
                      f"contributors/Vincentqyw/cv-arxiv-daily.svg?style=for-the-badge\n"))
             f.write((f"[contributors-url]: https://github.com/Vincentqyw/"
@@ -333,10 +377,10 @@ def json_to_md(filename,md_filename,
 
     logging.info(f"{task} finished")
 
+
 def demo(**config):
-    # TODO: use config
     data_collector = []
-    data_collector_web= []
+    data_collector_web = []
 
     keywords = config['kv']
     max_results = config['max_results']
@@ -351,59 +395,58 @@ def demo(**config):
         logging.info(f"GET daily papers begin")
         for topic, keyword in keywords.items():
             logging.info(f"Keyword: {topic}")
-            data, data_web = get_daily_papers(topic, query = keyword,
-                                            max_results = max_results)
+            data, data_web = get_daily_papers(topic, query=keyword,
+                                              max_results=max_results)
             data_collector.append(data)
             data_collector_web.append(data_web)
             print("\n")
         logging.info(f"GET daily papers end")
 
-    # 1. update README.md file
+    # 1. update README.md file — with monthly grouping enabled
     if publish_readme:
         json_file = config['json_readme_path']
         md_file   = config['md_readme_path']
-        # update paper links
         if config['update_paper_links']:
             update_paper_links(json_file)
         else:
-            # update json data
-            update_json_file(json_file,data_collector)
-        # json data to markdown
-        json_to_md(json_file,md_file, task ='Update Readme', \
-            show_badge = show_badge)
+            update_json_file(json_file, data_collector)
+        json_to_md(json_file, md_file, task='Update Readme',
+                   show_badge=show_badge,
+                   group_by_month=True)        # ← monthly collapsible sections
 
-    # 2. update docs/index.md file (to gitpage)
+    # 2. update docs/index.md file (to gitpage) — flat table, no monthly grouping
     if publish_gitpage:
         json_file = config['json_gitpage_path']
         md_file   = config['md_gitpage_path']
-        # TODO: duplicated update paper links!!!
         if config['update_paper_links']:
             update_paper_links(json_file)
         else:
-            update_json_file(json_file,data_collector)
-        json_to_md(json_file, md_file, task ='Update GitPage', \
-            to_web = True, show_badge = show_badge, \
-            use_tc=False, use_b2t=False)
+            update_json_file(json_file, data_collector)
+        json_to_md(json_file, md_file, task='Update GitPage',
+                   to_web=True, show_badge=show_badge,
+                   use_tc=False, use_b2t=False,
+                   group_by_month=False)
 
-    # 3. Update docs/wechat.md file
+    # 3. Update docs/wechat.md file — flat, no monthly grouping
     if publish_wechat:
         json_file = config['json_wechat_path']
         md_file   = config['md_wechat_path']
-        # TODO: duplicated update paper links!!!
         if config['update_paper_links']:
             update_paper_links(json_file)
         else:
             update_json_file(json_file, data_collector_web)
-        json_to_md(json_file, md_file, task ='Update Wechat', \
-            to_web=False, use_title= False, show_badge = show_badge)
+        json_to_md(json_file, md_file, task='Update Wechat',
+                   to_web=False, use_title=False, show_badge=show_badge,
+                   group_by_month=False)
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config_path',type=str, default='config.yaml',
-                            help='configuration file path')
+    parser.add_argument('--config_path', type=str, default='config.yaml',
+                        help='configuration file path')
     parser.add_argument('--update_paper_links', default=False,
-                        action="store_true",help='whether to update paper links etc.')
+                        action="store_true", help='whether to update paper links etc.')
     args = parser.parse_args()
     config = load_config(args.config_path)
-    config = {**config, 'update_paper_links':args.update_paper_links}
+    config = {**config, 'update_paper_links': args.update_paper_links}
     demo(**config)
