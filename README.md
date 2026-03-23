@@ -1,4 +1,4 @@
-## Updated on 2026.03.21
+## Updated on 2026.03.23
 > Usage instructions: [here](./docs/README.md#usage)
 
 <details>
@@ -66,7 +66,7 @@
 </details>
 
 
-<p align=right>(<a href=#updated-on-20260321>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260323>back to top</a>)</p>
 
 ## NeRF
 
@@ -107,7 +107,7 @@
 </details>
 
 
-<p align=right>(<a href=#updated-on-20260321>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260323>back to top</a>)</p>
 
 ## Vision Language Navigation
 
@@ -149,7 +149,7 @@
 </details>
 
 
-<p align=right>(<a href=#updated-on-20260321>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260323>back to top</a>)</p>
 
 ## Navigation
 
@@ -191,7 +191,7 @@
 </details>
 
 
-<p align=right>(<a href=#updated-on-20260321>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260323>back to top</a>)</p>
 
 ## 3DGS&NeRF
 
@@ -238,7 +238,7 @@
 </details>
 
 
-<p align=right>(<a href=#updated-on-20260321>back to top</a>)</p>
+<p align=right>(<a href=#updated-on-20260323>back to top</a>)</p>
 
 [contributors-shield]: https://img.shields.io/github/contributors/Vincentqyw/cv-arxiv-daily.svg?style=for-the-badge
 [contributors-url]: https://github.com/Vincentqyw/cv-arxiv-daily/graphs/contributors
